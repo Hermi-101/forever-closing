@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import './index.css'; // keep if present; otherwise you can remove this line
 import { BrowserRouter } from 'react-router-dom';
+import ShopContextProvider from './context/ShopContext.jsx';
 
 // debug log to confirm this file runs
 console.log('main.jsx loaded');
@@ -15,7 +16,9 @@ if (!rootEl) {
 } else {
   createRoot(rootEl).render(
     <BrowserRouter>
+    <ShopContextProvider>
       <App />
+    </ShopContextProvider>
     </BrowserRouter>
   );
   console.log('React rendered App');
